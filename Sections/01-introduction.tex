@@ -1,37 +1,260 @@
-%*----------- SLIDE -------------------------------------------------------------
-\begin{frame}[t]{Introdução} 
-    \transdissolve[duration=0.5]
-    Um dos pontos importantes na área da robótica é a interação entre os sistemas, e em decorrência ao programa de formação em robótica uma das lacunas será preenchida com o desenvolvimento do desafio 2.5..
+{\usebackgroundtemplate{\includegraphics[width=\paperwidth]{pic1.jpg}}
+\begin{frame}[t]\color{orange}\Huge{Localização na Robótica}
 
-    O desafio consiste em:
-    %\newline
-        \begin{columns}[t]
-            \column{.05\linewidth}
-            \column{.4\linewidth}
-                \begin{enumerate}
-                    \item assimilar o conhecimento da interação em robots;
-                    \item compreender em profundidade os conceitos de simulação, e o;
-                    \item desenvolvimento da liderança em projetos \cite{Mohan2015}.
-                \end{enumerate}
-            \column{.6\linewidth}
-            \begin{center}
-            %\centerline{
-                \begin{figure}
-                    %\includegraphics[width=1\textwidth]{pista}
-                    \caption{Pista de corrida \cite{agostini2007}}
-                    \roundpic[xshift=0cm,yshift=0cm]{2.5cm}{6cm}{pista}
-                    %\caption{Pista de corrida \cite{agostini2007}}
-                \end{figure}
-            %}
-            \end{center}
-        \end{columns}
-%*----------- notes
-    \note[item]{Notes can help you to remember important information. Turn on the notes option.}
 \end{frame}
-%-
-%*----------- SLIDE -------------------------------------------------------------
-\begin{frame}[c]{Objetivo} 
-    \framesubtitle{sub-objetivo}
+}
+%%%%%%%%%%%%%%%%%%%%%%% new slide %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}[t]{Localização em ambientes externos}
+
+    Em \textbf{ambientes externos}, a localização por \textbf{GPS} nem sempre oferece resultados adequados devido a \textbf{obstáculos}.
+    \begin{figure}
+
+        %\includegraphics[width=11cm,height=6.0cm]{tf1.png}
+        %\includegraphics[width=11cm,height=6.0cm]{tf2.png}
+        \includegraphics[width=0.475\textwidth,height=4.05cm]{pic2.png}%
+        \hfill
+        \includegraphics[width=0.475\textwidth]{pic3.png}
+    
+    \end{figure}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%% new slide %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[t]{E Agora?}
+
+   A aplicação de \textbf{modelos probabilístico} com auxílio de \textbf{mapas} pode ser um caminho para vencer o problema de localização na robótica móvel.
+   \begin{figure}
+    \vspace*{0.5cm}
+    \includegraphics[width=0.4\textwidth,height=0.2\textwidth]{slide4.png}%
+   \end{figure}
+
+
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%% new slide %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[t]{Um pouco de Monte Carlo Localization}
+
+    O Monte Carlo Localization é a aplicação de \textbf{Filtros de partículas} para Localização usando  \textbf{Inferência Bayesiana}.
+    
+    \begin{figure}
+       
+        \vspace*{0.2cm}
+        \includegraphics[width=0.435\textwidth,height=4.05cm]{inferencia.png}%
+        
+    
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%% new slide %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[t]{Um pouco mais de Monte Carlo Localization}
+
+    No \textbf{conhecimento a priori} é considerado  a \textbf{modelagem} do sistema e \textbf{conhecimento atual}. 
+    \begin{figure}
+        \vskip1.2cm
+        \includegraphics[width=0.635\textwidth,height=2.05cm]{priori.png}%
+        
+    
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%% new slide %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[t]{Um pouco mais de Monte Carlo Localization}
+
+    No \textbf{conhecimento a posteriori} é considerado  os \textbf{dados dos sensores} do sistema e  o\textbf{conhecimento a priori}. 
+    \begin{figure}
+        \vskip1.2cm
+        \includegraphics[width=0.635\textwidth,height=2.05cm]{posteriori.png}%
+        
+    
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%% new slide %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{frame}[c]{} 
+%    \transdissolve[duration=0.5]
+%   
+%    \begin{center}
+%        \Wider{%
+%        \begin{shaded}
+%        \begin{center}
+%            \vspace*{0.5cm}
+%            \resizebox{!}{0.7cm}{%
+%                Isso é um Filtro de Kalman?
+%            }%
+%        \end{center}
+%        \end{shaded}
+%        }%
+%    \end{center}
+%    
+%   
+%%
+%\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%% new slide %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{frame}[c]{} 
+%    \transdissolve[duration=0.5]
+%   
+%    \begin{center}
+%        \Wider{%
+%        \begin{shaded}
+%        \begin{center}
+%            \vspace*{0.5cm}
+%            \resizebox{!}{0.7cm}{%
+%                por um detalhe, não!
+%            }%
+%        \end{center}
+%        \end{shaded}
+%        }%
+%    \end{center}
+%    
+%   
+%%
+%\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%% new slide %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%\begin{frame}[t]{O Detalhe}
+%
+%    Os Filtros de Kalman são projetados sobre uma \textbf{distribuição Gaussiana}.
+%    \begin{columns}[T]
+%        \begin{column}{0.50\textwidth}
+%            \vskip0.4cm
+%            \begin{itemize}
+%                \item Unimodal
+%                \item Média
+%                \item Variância
+%                
+%            \end{itemize}
+%        \end{column}
+%        \begin{column}{0.50\textwidth}
+%            \vskip0.4cm
+%            \includegraphics[width=0.735\textwidth,height=4.05cm]{gaus.png}
+%            
+%        \end{column}
+%    \end{columns}
+%   
+%    
+%\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%% new slide %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[t]{Ai vem as partículas}
+
+    As \textbf{partículas} representação os \textbf{dados} que serão tratados. 
+    \begin{figure}
+
+        \includegraphics[width=0.610\textwidth,height=5.8cm]{particulas.png}%
+        
+    
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%% new slide %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[t]{Em resumo...}
+
+    
+    \begin{figure}
+
+        \includegraphics[width=0.830\textwidth,height=4.8cm]{mcl_resume.png}%
+        
+    
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%% new slide %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[t]{Multi Layers Maps}
+
+    \textbf{Multi Layers Maps} podem representar elevações \textbf{diferentes niveis}
+    \vskip0.25cm
+    \begin{figure}
+
+        \includegraphics[width=0.630\textwidth,height=4.8cm]{mls1.png}%
+        
+    
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%% new slide %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[t]{Multi Layers Maps versus Elevation maps}
+
+    \textbf{Elevation Maps} representam as elevações usando a \textbf{média} destas.
+    
+    \begin{figure}
+
+        \includegraphics[width=0.630\textwidth,height=4.8cm]{mls_vs_em.png}%
+        
+    
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}[t]{Elevation Maps Versus Multi Layers Maps}
+
+  
+    
+    \begin{figure}
+        %\caption{Elevation Maps Versus Multi Layrers Maps}
+        \includegraphics[width=5cm,height=5cm]{elevation.png}
+        \includegraphics[width=5cm,height=5cm]{multi_layer.png}
+        \label{label_here} 
+    \end{figure}
+
+
+    %\begin{figure}
+    %    \centering
+    %    \begin{subfigure}
+    %      \includegraphics[width=5cm,height=5cm]{elevation.png}
+    %      \caption{A subfigure}
+    %      \end{subfigure}%
+    %    \hfill
+    %    \begin{subfigure}{}
+    %     \includegraphics[width=5cm,height=5cm]{multi_layer.png}
+    %      \caption{A subfigure}
+    %      \end{subfigure}
+    %    \caption{A figure with two subfigures}
+    %\end{figure}
+
+    
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%% new slide %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}[t]{Mais detalhes do Multi Layers Maps}
+
+    %\textbf{Elevetion Maps} representam as elevações usando a \textbf{média} destas.
+    
+    \begin{itemize}
+        \item São dívidas em \textbf{células quadráticas}.
+        \item Cada célula possui um \textbf{vetor normal} com a superfície
+        \item É capaz de detectar \textbf{pontes e passagens elevadas}.
+        \item Os dados \textbf{verticais} podem ser usados para \textbf{estimar a posição} do robô.
+        \item O \textbf{custo computacional} é de apenas \textbf{10\% maior}. 
+     
+    \end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%% new slide %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[c]{Monte Carlo com Multi Layers Maps} 
     \transdissolve[duration=0.5]
    
     \begin{center}
@@ -40,7 +263,7 @@
         \begin{center}
             \vspace*{0.5cm}
             \resizebox{!}{0.7cm}{%
-                \color{mracula0} O objetivo é ter um objetivo.
+                Predição
             }%
         \end{center}
         \end{shaded}
@@ -48,229 +271,138 @@
     \end{center}
     
    
-%*----------- notes
-    \note[item]{Notes can help you to remember important information. Turn on the notes option.}
+%
 \end{frame}
-%-
-{
-\setbeamertemplate{background}
-{\includegraphics[trim = 0 0 0 0, clip, width = \the\paperwidth, height = \the\paperheight]{marcel-knupfer-37wuETxVwTQ-unsplash.jpg}}
-%*----------- SLIDE -------------------------------------------------------------
-\begin{frame}[c]{}
-    \transboxout[duration=0.5]
+
+%%%%%%%%%%%%%%%%%%%%%%% new slide %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[t]{Predição}
+    O \textbf{Modelo Probabilístico} trata os \textbf{vetores de movimentos em 2D}, mas  o \textbf{MLS} é necessário uma transformação em 3D.
+    %\textbf{Elevetion Maps} representam as elevações usando a \textbf{média} destas.
     
-    \begin{columns}
-        \column{.1\textwidth}
-        \column{.3\textwidth}
-        \column{.53\textwidth}
-            \vspace*{-3.5cm}
-            \Huge{\textbf{\textcolor{mracula5}{Quando chovia...}}}
-    \end{columns}
-%*----------- notes
-    \note[item]{Notes can help you to remember important information. Turn on the notes option.}
+    \begin{figure}
+
+        \includegraphics[width=0.730\textwidth,height=4.8cm]{pred1.png}%
+        
+    
+    \end{figure}
 \end{frame}
-%-
-}
-%*----------- SLIDE -------------------------------------------------------------
-\begin{frame}[t]{O sistema robótico}
-    \transboxout[duration=0.5]
-    \framesubtitle{Darwin-OP}
-    \begin{columns}
-        \column{.1\textwidth}
-        \column{.4\textwidth}
-            \includegraphics[width=.7\textwidth]{darwin-op}
-        \column{.4\textwidth}
-            \begin{enumerate}
-                \item plataforma antropormórfica Darwin-OP;
-                \item 20 DoF\footnote{do inglês, graus de liberdade};
-                \item composto de 18 servo-motores;
-                \item possui um grande gama de sensores para interação.
-            \end{enumerate}
-    \end{columns}
- %*----------- notes
-    \note[item]{Notes can help you to remember important information. Turn on the notes option.}
+
+%%%%%%%%%%%%%%%%%%%%%%% new slide %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[t]{Predição com auxilio do Mapa}
+    Considerando a existência de \textbf{vetores normais} a superfície para célula, é possivél tranformar um \textbf{vetor de movimento 2D}  em \textbf{3D}.
+    %\textbf{Elevetion Maps} representam as elevações usando a \textbf{média} destas.
+    
+    \begin{figure}
+
+        \includegraphics[width=0.730\textwidth,height=4.8cm]{pred2.png}%
+        
+    
+    \end{figure}
 \end{frame}
-%-
-%*----------- SLIDE -------------------------------------------------------------
-\begin{frame}[c]{Darwin-OP - overview}
-    %\transboxin[duration=1,direction=30]
-    \centering
 
-    \includemedia[
-      width=0.7\linewidth,
-      totalheight=0.39375\linewidth,
-      activate=pageopen,
-      passcontext, 
-      addresource=./Source/movies/Darwin-OP.mp4,
-      flashvars={
-      source=./Source/movies/Darwin-OP.mp4
-      &autoPlay=true
-      &Loop=false}
-      ]{\fbox{\includegraphics{darwin-op}}}{VPlayer.swf}
+%%%%%%%%%%%%%%%%%%%%%%% new slide %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%*----------- notes
-    \note[item]{Notes can help you to remember important information. Turn on the notes option.}
+%\begin{frame}[t]{Predição com auxilio do Mapa}
+%    .
+%    %\textbf{Elevetion Maps} representam as elevações usando a \textbf{média} destas.
+%    
+%    \begin{figure}
+%
+%        \includegraphics[width=0.630\textwidth,height=4.8cm]{pp2.png}%
+%        
+%    
+%    \end{figure}
+%\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%% new slide %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[c]{Monte Carlo com Multi Layers Maps} 
+    \transdissolve[duration=0.5]
+   
+    \begin{center}
+        \Wider{%
+        \begin{shaded}
+        \begin{center}
+            \vspace*{0.5cm}
+            \resizebox{!}{0.7cm}{%
+                Modelo Sensorial para MLS
+            }%
+        \end{center}
+        \end{shaded}
+        }%
+    \end{center}
+    
+   
+%
 \end{frame}
-%-
-%*----------- SLIDE -------------------------------------------------------------
-\begin{frame}[t]{O sistema robótico}
-    \transboxout[duration=0.5]
-    \framesubtitle{Darwin-OP}
-    \begin{columns}
-        \column{.1\textwidth}
-        \column{.4\textwidth}
-        \column{.4\textwidth}
-    \end{columns}
 
-    \begin{block}{Um bloco de destaque}
-        Um exemplo de block.\\
-        Oferece um certo destaque.
-    \end{block}
+%%%%%%%%%%%%%%%%%%%%%%% new slide %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-    \begin{alertblock}{Um bloco de destaque}
-        Um exemplo de alertblock.\\
-        Oferece um certo destaque.
-    \end{alertblock}
-
-    \begin{exampleblock}{Um bloco de destaque}
-        Um exemplo de exampleblock.
-    \end{exampleblock}
- %*----------- notes
-    \note[item]{Notes can help you to remember important information. Turn on the notes option.}
+\begin{frame}[c]{} 
+    \transdissolve[duration=0.5]
+   
+    \begin{center}
+        \Wider{%
+        \begin{shaded}
+        \begin{center}
+            \vspace*{0.5cm}
+            \resizebox{!}{0.7cm}{%
+                Resultados
+            }%
+        \end{center}
+        \end{shaded}
+        }%
+    \end{center}
+    
+   
+%
 \end{frame}
-%-
-%*----------- SLIDE -------------------------------------------------------------
-\begin{frame}[t]{O sistema robótico}
-    \transboxout[duration=0.5]
-    \framesubtitle{PlantUML}
+
+%%%%%%%%%%%%%%%%%%%%%%% new slide %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\begin{frame}[t]{Elevation Maps Vs Multi Layers Superficies}
     
-    \tikzstyle{every node}=[draw=black,thick,anchor=west]
-    \tikzstyle{selected}=[draw=red,fill=red!30]
-    \tikzstyle{optional}=[dashed,fill=gray!50]
+    %\textbf{Elevetion Maps} representam as elevações usando a \textbf{média} destas.
+    
+    \begin{figure}
 
-    \begin{tikzpicture}[%
-        grow via three points={one child at (0.5,-0.7) and
-        two children at (0.5,-0.7) and (0.5,-1.4)},
-        edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
-        \node {texmf}
-          child { node {doc}}		
-          child { node {fonts}}
-          child { node {source}}
-          child { node [selected] {tex}
-            child { node {generic}}
-            child { node [optional] {latex}}
-            child { node {plain}}
-          }
-          child [missing] {}				
-          child [missing] {}				
-          child [missing] {}				
-          child { node {texdoc}};
-      \end{tikzpicture}
-
- %*----------- notes
-    \note[item]{Notes can help you to remember important information. Turn on the notes option.}
+        \includegraphics[width=0.730\textwidth,height=5.1cm]{results1.png}%
+        
+    
+    \end{figure}
 \end{frame}
-%-
-%*----------- SLIDE -------------------------------------------------------------
-\begin{frame}[t]{O sistema robótico}
-    \transboxout[duration=0.5]
-    \framesubtitle{PlantUML}
+
+%%%%%%%%%%%%%%%%%%%%%%% new slide %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]{Mapa Conceitual}
+ 
+    \begin{figure}
+
+        \includegraphics[width=350]{conceptual_map.jpg}%
+        
     
-    % Define block styles
-    \tikzstyle{decision} = [diamond, draw, fill=blue!20, 
-    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
-    \tikzstyle{block} = [rectangle, draw, fill=blue!20, 
-    text width=5em, text centered, rounded corners, minimum height=4em]
-    \tikzstyle{line} = [draw, -latex']
-    \tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
-    minimum height=2em]
-
-    \begin{tikzpicture}[node distance = 2cm, auto]
-        % Place nodes
-        \node [block] (init) {initialize model};
-        \node [cloud, left of=init] (expert) {expert};
-        \node [cloud, right of=init] (system) {system};
-        \node [block, below of=init] (identify) {identify candidate models};
-        \node [block, below of=identify] (evaluate) {evaluate candidate models};
-        \node [block, left of=evaluate, node distance=3cm] (update) {update model};
-        \node [decision, below of=evaluate] (decide) {is best candidate better?};
-        \node [block, below of=decide, node distance=3cm] (stop) {stop};
-        % Draw edges
-        \path [line] (init) -- (identify);
-        \path [line] (identify) -- (evaluate);
-        \path [line] (evaluate) -- (decide);
-        \path [line] (decide) -| node [near start] {yes} (update);
-        \path [line] (update) |- (identify);
-        \path [line] (decide) -- node {no}(stop);
-        \path [line,dashed] (expert) -- (init);
-        \path [line,dashed] (system) -- (init);
-        \path [line,dashed] (system) |- (evaluate);
-    \end{tikzpicture}
-
- %*----------- notes
-    \note[item]{Notes can help you to remember important information. Turn on the notes option.}
+    \end{figure}
 \end{frame}
-%-
-%*----------- SLIDE -------------------------------------------------------------
-\begin{frame}[t]{O sistema robótico}
-    \transboxout[duration=0.5]
-    \framesubtitle{PlantUML}
+\begin{frame}[c]{} 
+    \transdissolve[duration=0.5]
+   
+    \begin{center}
+        \Wider{%
+        \begin{shaded}
+        \begin{center}
+            \vspace*{0.5cm}
+            \resizebox{!}{0.7cm}{%
+            Conclusão
+            }%
+        \end{center}
+        \end{shaded}
+        }%
+    \end{center}
     
-    \begin{tikzpicture}[line width=0.1pt]
-        \draw(0,0) circle(5cm);
-        \draw(0,0) circle(1cm);
-        \draw(0,0) node {\Huge$\mathbf{A}$};
-        \draw(0,0) circle(4.5cm);
-        \draw(-48:2.5) arc(-48:240:2.5cm);
-        %% The outer nodes
-        \foreach \x in {36,72,...,360}
-            \shade[ball color=black](\x:5) circle(4pt);
-        \foreach \nodes in {12,24,...,360}
-            \shade[ball color=black](\nodes:3.5) circle(4pt);
-        %%% The connecting nodes
-        \foreach \angle in {-48,-12,...,240}
-            \draw(\angle:2.5) --++(\angle:0.9cm);
-        %%% outer interconnects
-        \foreach \angle in {-24,12,...,306}
-            \draw(\angle:3.6) --++(\angle:0.9cm);
-        \foreach \y in {-24,12,...,240}
-            \shade[ball color=black](\y:4.5cm) circle(4pt);
-    
-        %% outer most connections
-        \foreach \angle in{-36,0,...,306}
-            \draw(\angle:4.9cm) --(\angle:4.7cm) [rotate=\angle]arc(0:180:0.20cm);
-        \foreach \angle in{-36,0,...,306}
-            \draw(\angle:4.3cm) --(\angle:3.6cm);
-        %% Outer connects and leads
-        \shade[ball color=black](276:6) circle(4pt);
-        \draw(276:6)circle(4pt)--(276:5.2)[rotate=276]arc(0:180:0.25cm);
-        \draw(276:7)node {$\mathbf{K_0}$};
-        \draw(276:4.2)[rotate=276]arc(180:360:0.25cm);
-        \draw(276:4.2)--(276:3.5);
-    
-        %% Exploitation of circular symmetry of the required figure
-    
-        {[rotate=72]
-            \shade[ball color=black](276:6) circle(4pt);
-            \draw(276:6)circle(4pt)--(276:5.2)[rotate=276]arc(0:180:0.25cm);
-            \draw(270:6)node {$\mathbf{K_1-K_9}$};
-            \draw(276:4.2)[rotate=276]arc(180:360:0.25cm);%%%
-            \draw(276:4.2)--(276:3.5);
-        }
-    
-        {[rotate=-48]
-            \shade[ball color=black](276:6) circle(4pt);
-            \draw(276:6)circle(4pt)--(276:5.2)[rotate=276]arc(0:180:0.20cm);
-            \draw(276:7)node {$\mathbf{g_2}$};
-            \draw(276:4.8)--(276:4.5);
-        }
-    
-        \draw(180:5)--(180:6);
-        \shade[ball color=black](180:6) circle(4pt);
-        \draw(180:6.5)node{$\mathbf{g_1}$};
-    \end{tikzpicture}
-
- %*----------- notes
-    \note[item]{Notes can help you to remember important information. Turn on the notes option.}
+   
+%
 \end{frame}
-%-
